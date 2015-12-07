@@ -4,7 +4,7 @@ import gulp from 'gulp';
 import runSequence from 'run-sequence';
 
 /* Importing all task we need */
-import * from 'etc/tasks';
+// import
 
 gulp.task('default', cb => {
   // runSequence('clean', cb);
