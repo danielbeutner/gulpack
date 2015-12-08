@@ -1,14 +1,16 @@
 import gulp from 'gulp';
 import browserSync from 'browser-sync';
-import {baseDir} from '../config';
+import {baseDir, index} from '../config';
 
 export function serve () {
-    browserSync.create();
-    browserSync.init(
-      {
-        server: {
-          baseDir
-        }
+  browserSync.create();
+  browserSync.init(
+    {
+      open: false,
+      server: {
+        baseDir: baseDir,
+        index: index
       }
-    );
+    }
+  );
 }
