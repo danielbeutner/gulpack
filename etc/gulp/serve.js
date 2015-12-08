@@ -1,6 +1,12 @@
 import gulp from 'gulp';
 import browserSync from 'browser-sync';
 import {srcDir, destDir, index} from '../config';
+import webpack from 'webpack';
+import webpackConfig from '../../webpack.config.js';
+import webpackDevMiddleware from 'webpack-dev-middleware';
+import webpackHotMiddleware from 'webpack-hot-middleware';
+
+var compiler = webpack(webpackConfig);
 
 export function serve() {
   browserSync.create();
@@ -9,7 +15,22 @@ export function serve() {
       open: false,
       server: {
         baseDir: destDir,
-        index: index
+        index: index,
+        middleware: [
+          webpackDevMiddleware(compiler, {
+            publicPath: webpackConfig.output.publicPath,
+            stats: {
+              colors: true,
+              modules: false,
+              chunks: false,
+              chunkModules: false,
+              version: false,
+              timings: false,
+              hash: false
+            }
+          }),
+          webpackHotMiddleware(compiler)
+        ]
       }
     }
   );

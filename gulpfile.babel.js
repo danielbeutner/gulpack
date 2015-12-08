@@ -11,16 +11,16 @@ import pkg from './package.json';
 /* Importing all task we need */
 import {clean} from './etc/gulp/clean';
 import {html} from './etc/gulp/html';
-import {serve} from './etc/gulp/serve';
 import {style} from './etc/gulp/style';
+import {serve} from './etc/gulp/serve';
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
 gulp.task('clean', clean);
 gulp.task('html', html);
-gulp.task('serve', serve);
 gulp.task('style', style);
+gulp.task('serve', serve);
 
 gulp.task('default', ['clean'], cb => {
   $.util.log(pkg.name, pkg.version, pkg.license);
