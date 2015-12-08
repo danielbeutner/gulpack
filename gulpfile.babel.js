@@ -12,6 +12,7 @@ import pkg from './package.json';
 import {clean} from './etc/gulp/clean';
 import {html} from './etc/gulp/html';
 import {serve} from './etc/gulp/serve';
+import {style} from './etc/gulp/style';
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -19,8 +20,9 @@ const reload = browserSync.reload;
 gulp.task('clean', clean);
 gulp.task('html', html);
 gulp.task('serve', serve);
+gulp.task('style', style);
 
 gulp.task('default', ['clean'], cb => {
   $.util.log(pkg.name, pkg.version, pkg.license);
-  runSequence('html', 'serve', cb);
+  runSequence(['html', 'style'], 'serve', cb);
 });

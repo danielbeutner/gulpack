@@ -1,3 +1,3 @@
 export const srcDir = './src';
-export const baseDir = './build';
+export const destDir = './build';
 export const index = 'app.html';

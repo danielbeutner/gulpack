@@ -1,5 +1,5 @@
 import del from 'del';
 
-export function clean () {
+export function clean() {
   del(['build/*'], {dot: true});
 }
