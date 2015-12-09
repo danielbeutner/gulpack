@@ -1,6 +1,5 @@
 import path from 'path';
 import webpack from 'webpack';
-import {srcDir, destDir, devPort} from './etc/config';
 
 export default {
   debug: true,
@@ -33,4 +32,4 @@ export default {
   resolve: {
     extensions: ['', '.js', '.json']
   }
-}
+};

@@ -1,5 +1,9 @@
+@import 'fonts';
+
 $body-color: #ddd;
 
 body {
   box-sizing: border-box;
+  font-family: 'San Francisco';
+  font-weight: 200;
 }

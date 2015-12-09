@@ -1,12 +1,12 @@
 import gulp from 'gulp';
 import browserSync from 'browser-sync';
-import {srcDir, destDir, index} from '../config';
+import { srcDir, destDir, index } from '../config';
 import webpack from 'webpack';
 import webpackConfig from '../../webpack.config.js';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 
-var compiler = webpack(webpackConfig);
+const compiler = webpack(webpackConfig);
 
 export function serve() {
   browserSync.create();
@@ -34,7 +34,7 @@ export function serve() {
       }
     }
   );
-
+  gulp.watch(srcDir + '/**/*.{js,jsx}', ['lint:src']);
   gulp.watch(srcDir + '/**/*.scss', ['style']);
   gulp.watch(srcDir + '/*.mustache', ['html']).on('change', browserSync.reload);
 }

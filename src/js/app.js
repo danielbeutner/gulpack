@@ -2,14 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 class Hello extends React.Component {
+  constructor(props) {
+    super(props);
+    this.message = 'It works! :-)';
+  }
   render() {
     return (
-      <div>{this.props.message}</div>
+      <div>{this.message}</div>
     );
   }
-};
+}
 
 ReactDOM.render(
-  <Hello message="It works! :-)" />,
+  <Hello />,
   document.getElementById('app')
 );
