@@ -20,15 +20,7 @@ export default {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ],
-  module: {
-    loaders: [
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loaders: ['react-hot', 'babel?presets[]=react,presets[]=es2015']
-      }
-    ]
-  },
+  module: {},
   resolve: {
     extensions: ['', '.js', '.json']
   }

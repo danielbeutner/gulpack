@@ -1,3 +1,4 @@
+/* eslint env: node */
 import gulp from 'gulp';
 import runSequence from 'run-sequence';
 import gulpLoadPlugins from 'gulp-load-plugins';
@@ -23,6 +24,6 @@ gulp.task('lint:config', lintConfig);
 gulp.task('serve', serve);
 
 gulp.task('default', ['clean'], cb => {
-  $.util.log(pkg.name, pkg.version, pkg.license);
-  runSequence(['html', 'style', 'lint:src', 'lint:config'], 'serve', cb);
+  $.util.log(pkg.name, pkg.version);
+  runSequence(['html', 'style', 'lint:src'], 'serve', cb);
 });

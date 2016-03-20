@@ -5,7 +5,7 @@ import { srcDir } from '../config.js';
 const $ = gulpLoadPlugins();
 
 export function lint() {
-  return gulp.src(srcDir + './**/*.{js,jsx}')
+  return gulp.src(srcDir + './**/*.js')
     .pipe($.eslint())
     .pipe($.eslint.format())
     .pipe($.eslint.failAfterError());

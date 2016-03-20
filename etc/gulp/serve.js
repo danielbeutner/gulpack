@@ -34,7 +34,7 @@ export function serve() {
       }
     }
   );
-  gulp.watch(srcDir + '/**/*.{js,jsx}', ['lint:src']);
+  gulp.watch(srcDir + '/**/*.js', ['lint:src']);
   gulp.watch(srcDir + '/**/*.scss', ['style']);
   gulp.watch(srcDir + '/*.mustache', ['html']).on('change', browserSync.reload);
 }
